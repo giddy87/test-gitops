@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name:  spring-testapp
-          image: giddy87/springboot:app-d23edxyuhre6238
+          image: giddy87/springboot:app-462d32d3adcb05db40ef7a3464c32f7d58beb46d
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
