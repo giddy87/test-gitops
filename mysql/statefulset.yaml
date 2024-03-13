@@ -29,5 +29,5 @@ spec:
               value: spring
             - name: MYSQL_USER
               value: thebulb
-            - name: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_PASSWORD
               value: Password123
