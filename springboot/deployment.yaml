@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  spring-testapp
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  spring-testapp
+  template:
+    metadata:
+      labels:
+        app:  spring-testapp
+    spec:
+      containers:
+        - name:  spring-testapp
+          image: giddy87/springboot:app-d23edxyuhre6238
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+         
+      
