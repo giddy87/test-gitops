@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: springmysql
+spec:
+  replicas: 1
+  serviceName: springmysql
+  selector:
+    matchLabels:
+      app: springmysql
+  template:
+    metadata:
+      labels:
+        app: springmysql
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: mysql
+          image: mysql:5.6
+          ports:
+            - name: tpc
+              protocol: TCP
+              containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: Password123
+            - name: MYSQL_DATABASE
+              value: spring
+            - name: MYSQL_USER
+              value: thebulb
